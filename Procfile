@@ -1,1 +1,1 @@
-web: python primvolBot.py --port=$PORT
+web: python primvolBot.py -p $PORT
