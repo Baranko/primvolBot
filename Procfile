@@ -1,2 +1,1 @@
-web: python primvolBot.py
-worker: node index.js
+web: python primvolBot.py --port=$PORT
