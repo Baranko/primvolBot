@@ -1,12 +1,27 @@
-# -*- coding: utf-8 -*-
-import config
-import telebot
+import os
 
-bot = telebot.TeleBot(config.token)
+TOKEN = "504179513:AAEJT5PbCxOXwRJOjgHrTAAc9n4fQ54Tl-A"
+PORT = int(os.environ.get('PORT', '8443'))
+updater = Updater(TOKEN)
 
-@bot.message_handler(content_types=["text"])
-def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
-    bot.send_message(message.chat.id, message.text)
+def help_message(arguments, message):
+    response = {'chat_id': message['chat']['id']}
+    result = ["Hey, %s!" % message["from"].get("first_name"),
+              "\rI can accept only these commands:"]
+    for command in CMD:
+        result.append(command)
+    response['text'] = "\n\t".join(result)
+    return response
 
-if __name__ == '__main__':
-     bot.polling(none_stop=True)
+def base64_decode(arguments, message):
+    response = {'chat_id': message['chat']['id']}
+    try:
+        response['text'] = b64decode(" ".join(arguments).encode("utf8"))
+    except:
+        response['text'] = "Can't decode it"
+    finally:
+        return response
+
+updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
+updater.bot.set_webhook("https://serene-reaches-88586.herokuapp.com/" + TOKEN)
+updater.idle()
