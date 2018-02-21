@@ -55,15 +55,14 @@ def main():
         last_chat_id = last_update['message']['chat']['id']
         last_chat_name = last_update['message']['chat']['first_name']
 
-        if last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
+        if last_chat_text.lower() in greetings and  6 <= hour < 12:
             greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
-            today += 1
 
-        if last_chat_text.lower() in greetings and today == now.day and 12 <= hour < 17:
+        if last_chat_text.lower() in greetings and 12 <= hour < 17:
             greet_bot.send_message(last_chat_id, 'Доброе день, {}'.format(last_chat_name))
             today += 1
 
-        if last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
+        if last_chat_text.lower() in greetings and 17 <= hour < 23:
             greet_bot.send_message(last_chat_id, 'Доброе вечер, {}'.format(last_chat_name))
             today += 1
 
