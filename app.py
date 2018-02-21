@@ -19,7 +19,14 @@ def help(bot, update):
 
 
 def echo(bot, update):
-    update.message.reply_text(update.message.text)
+    update.message.reply_text('Привет! :hand: /n Я - бот Волонтёр Приморья! Я могу ответить на простые вопросы, связанные с волонтёрством!
+'/nЯ ещё молодой и начинающий бот и многого не умею, но дай мне время, и я научусь делать новые вещи :blush:
+'/nНабери одну из команд, чтобы получить ответ на интересующий тебя вопрос:
+'/n/Book - расскажу тебе, как получить книжку волонтёра
+'/n/Events - расскажу, на какие мероприятия ты можешь подать заявку в качестве волонтёра
+'/n/Cat - пришлю тебе смешного кота!
+'/nВ будущем я научусь делать и другие полезные штуки :smirk:
+'/nНе спускай с меня глаз! :eyes:')
 
 
 def error(bot, update, error):
@@ -32,7 +39,7 @@ def events(bot, update):
     update.message.reply_text('Сейчас у нас проходят такие мероприятия!')
 
 def cat(bot, update):
-    update.message.reply_sticker('BQADAgADeAcAAlOx9wOjY2jpAAHq9DUC')
+    update.message.reply_sticker('CAADAgADnwADwl3uDLGxK0dMZWzwAg')
 
 # Write your handlers here
 
