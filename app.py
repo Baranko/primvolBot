@@ -28,6 +28,12 @@ def error(bot, update, error):
 def book(bot, update):
     update.message.reply_text('Получи её у меня!')
 
+def events(bot, update):
+    update.message.reply_text('Сейчас у нас проходят такие мероприятия!')
+
+def cat(bot, update):
+    update.message.reply_sticker('BQADAgADeAcAAlOx9wOjY2jpAAHq9DUC')
+
 # Write your handlers here
 
 
@@ -45,6 +51,8 @@ def setup(webhook_url=None):
         dp.add_handler(CommandHandler("start", start))
         dp.add_handler(CommandHandler("help", help))
         dp.add_handler(CommandHandler("book", book))
+        dp.add_handler(CommandHandler("events", events))
+        dp.add_handler(CommandHandler("cat", cat))
 
         # on noncommand i.e message - echo the message on Telegram
         dp.add_handler(MessageHandler(Filters.text, echo))
