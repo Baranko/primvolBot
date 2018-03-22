@@ -25,7 +25,7 @@ def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"' % (update, error))
 
 def book(bot, update):
-    update.message.reply_text HTML('<b>Получи её у меня!</b>')
+    update.message.reply_text('Получи её у меня!')
 
 def events(bot, update):
     update.message.reply_text('Сейчас у нас проходят такие мероприятия!')
