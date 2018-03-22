@@ -28,7 +28,7 @@ def book(bot, update):
     update.message.reply_text('Получи её у меня!')
 
 def events(bot, update):
-    update.message.reply_text('Сейчас у нас проходят такие мероприятия!')
+    update.message.reply_text HTML('<b>Сейчас у нас проходят такие мероприятия!</b>')
 
 def cat(bot, update):
     update.message.reply_sticker('CAADAgADnwADwl3uDLGxK0dMZWzwAg')
