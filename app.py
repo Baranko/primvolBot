@@ -11,21 +11,21 @@ TOKEN = '504179513:AAEJT5PbCxOXwRJOjgHrTAAc9n4fQ54Tl-A'
 
 
 def start(bot, update):
-    update.message.reply_text('welcome MESSAGE')
+    update.message.reply_text('Привет! :hand: /n Я - бот Волонтёр Приморья!')
 
 
 def help(bot, update):
-    update.message.reply_text('help message')
+    update.message.reply_text('/book - информация о книжке, /events - информация о мероприятиях, /cat - для получения стикеров')
 
 
 def echo(bot, update):
-    update.message.reply_text('Привет! :hand: /n Я - бот Волонтёр Приморья! Я могу ответить на простые вопросы, связанные с волонтёрством! /nЯ ещё молодой и начинающий бот и многого не умею, но дай мне время, и я научусь делать новые вещи :blush: /nНабери одну из команд, чтобы получить ответ на интересующий тебя вопрос:/n//Book - расскажу тебе, как получить книжку волонтёра/n//Events - расскажу, на какие мероприятия ты можешь подать заявку в качестве волонтёра/n//Cat - пришлю тебе смешного кота!/nВ будущем я научусь делать и другие полезные штуки :smirk:/nНе спускай с меня глаз! :eyes:')
+    update.message.reply_text('Привет! :hand: /n Я - бот Волонтёр Приморья!')
 
 def error(bot, update, error):
     logger.warning('Update "%s" caused error "%s"' % (update, error))
 
 def book(bot, update):
-    update.message.reply_text('Получи её у меня!')
+    update.message.reply_text HTML('<b>Получи её у меня!</b>')
 
 def events(bot, update):
     update.message.reply_text('Сейчас у нас проходят такие мероприятия!')
